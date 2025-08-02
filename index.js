@@ -5,13 +5,15 @@ import validator from "validator";
 import { createMessage } from "./createMessage.js";
 import { sendEmail } from "./sendEmail.js";
 const app = express();
-app.use(
-  cors({
-    origin: [process.env.WEBSITE_URL,process.env.WEBSITE_URL2],
-    methods: ["POST"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: [process.env.WEBSITE_URL,process.env.WEBSITE_URL2],
+//     methods: ["POST"],
+//     credentials: true,
+//   })
+// );
+app.use(cors({ origin: "*", methods: ["POST", "OPTIONS"] }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

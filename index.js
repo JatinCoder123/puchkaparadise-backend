@@ -7,7 +7,7 @@ import { sendEmail } from "./sendEmail.js";
 const app = express();
 app.use(
   cors({
-    origin: [process.env.WEBSITE_URL],
+    origin: [process.env.WEBSITE_URL,process.env.WEBSITE_URL2],
     methods: ["POST"],
     credentials: true,
   })
